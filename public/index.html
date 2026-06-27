@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConversAI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layoutApp">
+
+    <aside class="sidebar">
+
+      <div class="testaSide">
+        <h1>ConversAI</h1>
+        <button type="button" class="btnMenu" title="Chiudi sidebar">&#x2039;</button>
+      </div>
+
+      <section class="sezProgetti">
+
+        <div class="testaSezione">
+          <h2>Progetti</h2>
+          <button type="button" class="btnNuovoProgetto" title="Nuovo progetto">+</button>
+        </div>
+
+        <form class="formProgetto" hidden>
+          <input type="text" class="inputNome" name="name" placeholder="Nome progetto" required>
+          <input type="text" class="inputDescrizione" name="description" placeholder="Descrizione (opzionale)">
+          <button type="submit">Crea progetto</button>
+        </form>
+        <p class="statoProg statoForm"></p>
+
+        <ul class="listaProgetti"></ul>
+
+        <div class="sezRicerca">
+          <div class="testaSezione">
+            <h2>Ricerca</h2>
+          </div>
+          <form class="formRicerca">
+            <input type="text" class="inputRicerca" name="q" placeholder="Cerca progetti e conversazioni">
+            <button type="submit">Cerca</button>
+          </form>
+          <p class="statoRicerca statoForm"></p>
+          <ul class="risultatiRicerca"></ul>
+        </div>
+
+      </section>
+    </aside>
+
+    <main class="areaPrinc">
+
+      <div class="nessunConversazione">
+        <div class="iconaVuota">&#x1F4AC;</div>
+        <h2 class="titoloVuoto">Benvenuto in ConversAI</h2>
+        <p class="testoVuoto">
+          Seleziona un progetto dalla sidebar, oppure creane uno nuovo,
+          per vedere le conversazioni.
+        </p>
+      </div>
+
+      <div class="vistaProgetto" hidden>
+
+        <header class="testaProgetto">
+          <h2 class="titoloProgetto"></h2>
+          <button type="button" class="btnNuovaConv">+ Nuova conversazione</button>
+        </header>
+
+        <div class="filtriConv" hidden>
+          <button type="button" class="filtro filtroTutte attivo">Tutte</button>
+          <button type="button" class="filtro filtroPreferite">&#x2605; Preferite</button>
+          <button type="button" class="filtro filtroArchiviate">Archiviate</button>
+        </div>
+
+        <form class="formConversazione" hidden>
+          <input type="text" class="inputTopic" name="topic" placeholder="Topic della conversazione" required>
+          <button type="submit">Crea conversazione</button>
+        </form>
+        <p class="statoConv statoForm"></p>
+
+        <ul class="listaConversazioni"></ul>
+
+      </div>
+
+      <div class="vistaConv" hidden>
+
+        <header class="testaConv">
+          <div class="testaConvSx">
+            <button type="button" class="btnTornaProgetto" title="Torna alle conversazioni">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+            </button>
+            <h2 class="titoloConv"></h2>
+          </div>
+          <div class="azioniConv">
+            <button type="button" class="btnPreferita">&#x2606; Aggiungi ai preferiti</button>
+            <button type="button" class="btnArchivia">Archivia</button>
+            <button type="button" class="btnEliminaConv">Elimina</button>
+          </div>
+        </header>
+
+        <section class="sezMessaggi">
+          <ul class="listaMessaggi"></ul>
+        </section>
+
+        <form class="formMessaggio">
+          <textarea class="inputMessaggio" name="content" rows="3" placeholder="Scrivi un messaggio..." required></textarea>
+          <button type="submit">Invia</button>
+        </form>
+        <p class="statoMsg statoForm"></p>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="client.js" defer></script>
+</body>
+</html>
